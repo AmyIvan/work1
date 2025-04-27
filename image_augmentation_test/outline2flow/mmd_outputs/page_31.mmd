@@ -1,0 +1,8 @@
+flowchart TD
+    Start(["开始"]) --> AmountJudgment["采购合同金额判断"]
+    AmountJudgment --> Below30k["3万元以下"]
+    AmountJudgment --> Between30kAnd100k["3万元（含）~10万元（不含）"]
+    AmountJudgment --> Above100k["10万元以上"]
+    Below30k --> SignAndUpload["自行签订，并上传学院小程序备案"] --> Approval1["审批"] --> End(["结束"])
+    Between30kAnd100k --> SignAndUploadSystem["自行签订，上传“合同管理系统”"] --> Approval2["审批"] --> Record1["备案，建立合同台账"] --> End(["结束"])
+    Above100k --> SignAndRecord["签订合同，建立合同台账"] --> Record2["备案，建立合同台账"] --> End(["结束"])

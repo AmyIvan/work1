@@ -1,0 +1,31 @@
+flowchart TD
+    Start(["开始"]) --> BudgetJudgment["采购预算金额判断"]
+    BudgetJudgment --> Below50k{"5万元以下"}
+    BudgetJudgment --> Between50kAnd100k{"5万元（含）~10万元（不含）"}
+    BudgetJudgment --> Between100kAnd200k{"10万元（含）~20万元（不含）"}
+    BudgetJudgment --> Between200kAnd1M{"20万元（含）~100万元（不含）"}
+    BudgetJudgment --> Above1M{"100万元及以上"}
+
+    Below50k --> ChooseOrSelfPurchase["从协议供应商选择或自行采购"]
+    ChooseOrSelfPurchase --> Approval1["审批"]
+    Approval1 --> End1(["结束"])
+
+    Between50kAnd100k --> NegotiateOrSelfPurchase["从协议供应商谈判或自行采购谈判"]
+    NegotiateOrSelfPurchase --> PurchaseApplication["购置申请表"]
+    PurchaseApplication --> Approval2["审批"]
+    Approval2 --> End2(["结束"])
+
+    Between100kAnd200k --> NegotiateOrOnlineInquiry["与协议供应商谈判或网上询价等"]
+    NegotiateOrOnlineInquiry --> End3(["结束"])
+
+    Between200kAnd1M --> OnlineInquiryOrCompetitiveNegotiation["网上询价、竞争性谈判等"]
+    OnlineInquiryOrCompetitiveNegotiation --> End4(["结束"])
+
+    Above1M --> DelegateToAgency["委托代理机构采购"]
+    DelegateToAgency --> End5(["结束"])
+
+    Below50k --> End6(["结束"])
+    Between50kAnd100k --> End7(["结束"])
+    Between100kAnd200k --> End8(["结束"])
+    Between200kAnd1M --> End9(["结束"])
+    Above1M --> End10(["结束"])

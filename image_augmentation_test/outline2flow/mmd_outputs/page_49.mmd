@@ -1,0 +1,15 @@
+flowchart TD
+    Start((开始)) --> DraftContract[草拟合同]
+    DraftContract --> IsTemplateFilled{是否按合同模板填写}
+    IsTemplateFilled -->|是| IsAmountOver3M{项目金额是否超过300万}
+    IsAmountOver3M -->|是| Review1[审核]
+    IsAmountOver3M -->|否| Review2[审核]
+    IsTemplateFilled -->|否| OAApproval[OA系统申请合同审批]
+    OAApproval --> Review1
+    Review1 --> ModifyContract[修改合同]
+    ModifyContract --> Review2
+    Review2 --> SignContract[签订合同]
+    SignContract --> StampAndFile[审核并盖章，备案合同原件]
+    StampAndFile --> ProjectInitiation[System立项申请]
+    ProjectInitiation --> Approval[审核通过]
+    Approval --> End((结束))

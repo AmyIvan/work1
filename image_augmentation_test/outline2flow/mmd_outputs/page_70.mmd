@@ -1,0 +1,8 @@
+flowchart TD
+    Start(["开始"]) --> InitiateOA["OA系统发起申请"]
+    InitiateOA --> ApplyForm["苏州大学行政印章刻制申请表"]
+    ApplyForm --> Approval1["审批"]
+    Approval1 --> SelectDepartment["OA系统选择对应归口部门"]
+    SelectDepartment --> Approval2["审批"]
+    Approval2 --> UseSeal["校办用印"]
+    UseSeal --> End(["结束"])

@@ -1,0 +1,11 @@
+flowchart TD
+    Start(["开始"]) --> Apply["提出申请"]
+    Apply --> Branch{"分支"}
+    Branch --> CollegeFunds["学院统筹经费"] --> CollegeApproval["学院经费负责人审批"]
+    Branch --> ResearchCenterFunds["研究中心经费"] --> ResearchCenterDirector["研究中心主任"]
+    Branch --> PersonalFunds["教师个人业务经费"]
+    CollegeApproval --> Review["审核"]
+    ResearchCenterDirector --> Review
+    PersonalFunds --> Review
+    Review --> AssignProjectNumber["分配项目号"]
+    AssignProjectNumber --> End(["结束"])

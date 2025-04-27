@@ -1,0 +1,10 @@
+flowchart TD
+    Start(["开始"]) --> Query[通过资产管理平台查询可调拨的闲置固定资产]
+    Query --> Apply[提出调拨申请]
+    Apply --> Fill[填写《苏州大学固定资产单位间调拨申请表》]
+    Fill --> Approve1[主管领导签字同意]
+    Approve1 --> Approve2[调入单位主管领导签字]
+    Approve2 --> Review[国资处审批、登记]
+    Review --> Change[国资处更改资产权限部门]
+    Change --> Handover[办理资产交接，留存交接文档]
+    Handover --> End(["结束"])

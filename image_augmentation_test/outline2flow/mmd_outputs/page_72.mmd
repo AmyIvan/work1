@@ -1,0 +1,21 @@
+flowchart TD
+    Start(["开始"]) --> Login("登录师生网上事务中心提前在线申请")
+    Login --> FillInfo("填写基本信息和本次出访相关信息，上传所需附件")
+    FillInfo --> IsLeader{"是否处级干部？"}
+    IsLeader -->|是| Approval1("组织部、纪委审批") --> Step7
+    IsLeader -->|否| Approval2("学院外合作办公室审批")
+    Approval2 --> Approval3("学院分管领导审批")
+    Approval3 --> Step7
+    subgraph Step7Group
+        Step7("受理、公示及OA行文办理")
+    end
+    Step7 --> Review("审核，并形成红头文件报江苏省人民政府外事办公室审批")
+    Review --> PassportVisa("办理因公护照、因公签证")
+    PassportVisa --> Procedures("办理相关手续，签订协议（如有）")
+    Procedures --> GoAbroad("出国")
+    GoAbroad --> Return("回国")
+    Return --> Report("1个月到本学院报到、提交总结反馈报告")
+    Report --> Publish("公示")
+    Publish --> RetrievePassport("收回因公普通护照")
+    RetrievePassport --> Reimburse("费用报销")
+    Reimburse --> End(["结束"])
