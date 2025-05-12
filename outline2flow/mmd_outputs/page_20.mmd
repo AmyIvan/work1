@@ -1,10 +1,24 @@
 flowchart TD
-    Start(["开始"]) --> A["接待人申请业务接待"]
-    A --> A1["提交《苏州大学业务接待审批表》、邀请函等证明文件"]
-    A1 --> B["审批"]
-    B --> C["接待"]
-    C --> D["接待人登录智能财务平台，提出接待支出报销申请"]
-    D --> D1["提交《苏州大学零星报销预约单》及相关证明文件"]
-    D1 --> E["审批"]
-    E --> F["财务处审核并支付"]
-    F --> End(["结束"])
+    Start((开始))
+    End((结束))
+    A[接待人申请业务接待]
+    B[学院（项目）负责人审批]
+    C[接待]
+    D[接待人登录智能财务平台，提出接待支出报销申请]
+    E[学院（项目）负责人审批]
+    F[财务处审核并支付]
+
+    Start --> A
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> End
+
+    A:::detail
+    D:::detail
+
+    classDef detail text-align:left;
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef startend fill:#ff9,stroke:#333,stroke-width:2px;

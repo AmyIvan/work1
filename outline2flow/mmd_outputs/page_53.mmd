@@ -1,28 +1,14 @@
 flowchart TD
-    Start([开始])
-    Decision1{是否支持线上申请绩效？}
-    OnlineApply[在科技管理系统发起绩效发放申请]
-    Review1(审核（学院分管领导）)
-    Review2(审核（产业技术研究院）)
-    OfflineApply[填写《横向科研项目奖励支出发放申请表》]
-    ReviewSign1(审核、签字、盖章（学院分管领导）)
-    ReviewSign2(审核、签字、盖章（产业技术研究院）)
-    Reserve[在智能财务平台预约酬金单]
-    FillForm[填写《横向科研项目奖励支出发放申请表》]
-    Approval(审批（学院分管领导）)
-    FinancialReview(审核发放（财务处）)
-    End([结束])
-
-    Start --> Decision1
-    Decision1 -- 是 --> OnlineApply
-    OnlineApply --> Review1
-    Review1 --> Review2
-    Review2 --> End
-    Decision1 -- 否 --> OfflineApply
-    OfflineApply --> ReviewSign1
-    ReviewSign1 --> ReviewSign2
-    ReviewSign2 --> Reserve
-    Reserve --> FillForm
-    FillForm --> Approval
-    Approval --> FinancialReview
-    FinancialReview --> End
+    A[("开始")] --> B{"是否支持线上申请绩效？"}
+    B --是--> C[在科技管理系统发起绩效发放申请]
+    C --> D[审核（学院分管领导）]
+    D --> E[审核（产业技术研究院）]
+    E --> F[("结束")]
+    B --否--> G[填写《横向科研项目奖励支出发放申请表》]
+    G --> H[审核、签字、盖章（学院分管领导）]
+    H --> I[审核、签字、盖章（产业技术研究院）]
+    I --> J[在智能财务平台预约酬金单]
+    J --> K[填写《横向科研项目奖励支出发放申请表》]
+    K --> L[审批（学院分管领导）]
+    L --> M[审核发放（财务处）]
+    M --> F[("结束")]

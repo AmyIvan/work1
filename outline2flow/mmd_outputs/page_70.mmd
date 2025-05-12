@@ -1,8 +1,8 @@
 flowchart TD
-    Start(["开始"]) --> InitiateOA["OA系统发起申请"]
-    InitiateOA --> ApplyForm["苏州大学行政印章刻制申请表"]
-    ApplyForm --> Approval1["审批"]
-    Approval1 --> SelectDepartment["OA系统选择对应归口部门"]
-    SelectDepartment --> Approval2["审批"]
-    Approval2 --> UseSeal["校办用印"]
-    UseSeal --> End(["结束"])
+    Start(["开始"]) --> P1["用印申请人OA系统发起申请"]
+    P1 --> P2["苏州大学行政印章刻制申请表"]
+    P2 --> P3["学院分管领导审批"]
+    P3 --> P4["学院综合办公室：OA系统选择对应归口部门"]
+    P4 --> P5["归口管理部门审批"]
+    P5 --> P6["校办用印"]
+    P6 --> End(["结束"])

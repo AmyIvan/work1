@@ -2,7 +2,7 @@ flowchart TD
     Start(["开始"]) --> Submit["经办人提交验收申请"]
     Submit --> Judge{"判断采购金额"}
     Judge -->|5万元（不含）以下| SelfOrganize["项目负责人自行组织验收"]
-    Judge -->|5万元（含）以上| JointOrganize["项目负责人参与验收\n实验材料与设备管理处参与验收，并签署验收报告"]
-    SelfOrganize --> Register["验收登记"]
-    JointOrganize --> Register
+    Judge -->|5万元（含）以上| Participate["项目负责人参与验收\n实验材料与设备管理处参与验收，并签署验收报告"]
+    SelfOrganize --> Register["学校资产管理员验收登记"]
+    Participate --> Register
     Register --> End(["结束"])

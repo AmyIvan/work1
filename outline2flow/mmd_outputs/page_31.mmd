@@ -1,8 +1,14 @@
 flowchart TD
-    Start(["开始"]) --> AmountJudgment["采购合同金额判断"]
-    AmountJudgment --> Below30k["3万元以下"]
-    AmountJudgment --> Between30kAnd100k["3万元（含）~10万元（不含）"]
-    AmountJudgment --> Above100k["10万元以上"]
-    Below30k --> SignAndUpload["自行签订，并上传学院小程序备案"] --> Approval1["审批"] --> End(["结束"])
-    Between30kAnd100k --> SignAndUploadSystem["自行签订，上传“合同管理系统”"] --> Approval2["审批"] --> Record1["备案，建立合同台账"] --> End(["结束"])
-    Above100k --> SignAndRecord["签订合同，建立合同台账"] --> Record2["备案，建立合同台账"] --> End(["结束"])
+    A(["开始"]) --> B["采购合同金额判断"]
+    B --> C{"3万元以下"}
+    C --> D["自行签订，并上传学院小程序备案"]
+    D --> E["学院（项目）负责人审批"]
+    E --> F(["结束"])
+    B --> G{"3万元（含）~10万元（不含）"}
+    G --> H["自行签订，上传“合同管理系统”"]
+    H --> I["学院（项目）负责人审批"]
+    I --> J["实验室与设备管理处备案，建立合同台账"]
+    J --> F
+    B --> K{"10万元以上"}
+    K --> L["采购与招投标管理中心签订合同，建立合同台账"]
+    L --> F

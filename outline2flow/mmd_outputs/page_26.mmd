@@ -1,11 +1,13 @@
 flowchart TD
-    Start(["开始"]) --> Submit["学生提交材料，通过邮箱申请"]
-    Submit --> Review["学院学生办公室审核"]
-    Review --> Approve1["审批"]
-    Approve1 --> Feedback["告知反馈"]
-    Feedback --> Publish["在学院网站公布奖学金名单"]
-    Publish --> Prepare["编制院设奖学金发放表"]
-    Prepare --> Approve2["学院负责人审批"]
-    Approve2 --> Approve3["审批"]
-    Approve3 --> Pay["财务处支付奖学金"]
-    Pay --> End(["结束"])
+    Start([开始])
+    End([结束])
+    A[学生提交材料，通过邮箱申请]
+    B[学院学生办公室审核]
+    C[学院党政联席会议审批]
+    D[捐赠方告知反馈]
+    E[在学院网站公布奖学金名单]
+    F[编制院设奖学金发放表]
+    G[学院负责人审批]
+    H[教育发展基金会审批]
+    I[财务处支付奖学金]
+    Start --> A --> B --> C --> D --> E --> F --> G --> H --> I --> End

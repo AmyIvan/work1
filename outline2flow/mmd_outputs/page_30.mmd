@@ -1,10 +1,10 @@
 flowchart TD
-    Start((开始)) --> JudgeAmount{申购金额是否超过20万元}
-    JudgeAmount -->|否| JudgeRange{申购金额范围}
-    JudgeRange -->|10万元以下（不含）| Research1[进行充分调研] --> ApproveCollege1[审批（学院负责人）] --> End((结束))
-    JudgeRange -->|10万元（含）~20万元（不含）| Research2[进行充分调研，在线提交申购申请] --> ApproveCollege2[审批（学院负责人）] --> ApproveLab1[审批（实验室与设备管理处）] --> End((结束))
-    JudgeAmount -->|是| InternalProcedure[校内申购论证程序] --> SubmitOnline[在线提交申购申请] --> ExpertOpinion[专家组成员在平台中提交论证意见] --> MeetingProof[党政联席会议同意购置的证明材料等] --> JudgeHigherRange{申购金额范围}
-    JudgeHigherRange -->|20万元（含）~50万元（不含）| ApproveCollege3[审批（学院负责人）] --> ApproveLab2[审批（实验室与设备管理处）] --> ApproveLeader1[审批（分管校领导）] --> End((结束))
-    JudgeHigherRange -->|50万元（含）~500万元（不含）| ApproveCollege4[审批（学院负责人）] --> ApproveLab3[审批（实验室与设备管理处）] --> ApproveLeader2[审批（分管校领导）] --> ApprovePresident1[审批（校长）] --> End((结束))
-    JudgeHigherRange -->|500万元（含）~1000万元（不含）| ApproveCollege5[审批（学院负责人）] --> ApproveLab4[审批（实验室与设备管理处）] --> ApproveLeader3[审批（分管校领导）] --> ApproveFinance1[审批（分管财务校领导）] --> ApprovePresident2[审批（校长）] --> End((结束))
-    JudgeHigherRange -->|1000万元（含）以上| ApproveCollege6[审批（学院负责人）] --> ApproveLab5[审批（实验室与设备管理处）] --> CollectiveDecision[集体决策] --> End((结束))
+    Start([开始]) --> IsAmountOver20万{申购金额是否超过20万元}
+    IsAmountOver20万 --否--> IsAmountUnder10万{申购金额范围}
+    IsAmountUnder10万 --10万元以下（不含）--> 调研1[进行充分调研] --> 审批学院1[审批（学院负责人）] --> End1([结束])
+    IsAmountUnder10万 --10万元（含）~20万元（不含）--> 调研2[进行充分调研，在线提交申购申请] --> 审批学院2[审批（学院负责人）] --> 审批设备处1[审批（实验室与设备管理处）] --> End2([结束])
+    IsAmountOver20万 --是--> 校内论证[校内申购论证程序] --> 提交申请[在线提交申购申请] --> 专家组论证[专家组成员在平台中提交论证意见] --> 党政联席会议[党政联席会议同意购置的证明材料等] --> IsAmountRange{申购金额范围}
+    IsAmountRange --20万元（含）~50万元（不含）--> 审批学院3[审批（学院负责人）] --> 审批设备处2[审批（实验室与设备管理处）] --> 审批分管校领导1[审批（分管校领导）] --> End3([结束])
+    IsAmountRange --50万元（含）~500万元（不含）--> 审批学院4[审批（学院负责人）] --> 审批设备处3[审批（实验室与设备管理处）] --> 审批分管校领导2[审批（分管校领导）] --> 审批校长1[审批（校长）] --> End4([结束])
+    IsAmountRange --500万元（含）~1000万元（不含）--> 审批学院5[审批（学院负责人）] --> 审批设备处4[审批（实验室与设备管理处）] --> 审批分管校领导3[审批（分管校领导）] --> 审批分管财务校领导[审批（分管财务校领导）] --> 审批校长2[审批（校长）] --> End5([结束])
+    IsAmountRange --1000万元（含）以上--> 审批学院6[审批（学院负责人）] --> 审批设备处5[审批（实验室与设备管理处）] --> 集体决策[集体决策] --> End6([结束])
